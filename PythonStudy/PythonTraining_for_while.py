@@ -9,7 +9,7 @@
 
 
 
-for i in range(3):
+for i in range(3) :
     print(i)
 
 
@@ -22,7 +22,7 @@ print()
 uname = 'alfa'
 upassword = 'abc123'
 
-for i in  range(1,4):
+for i in range(1, 4):
     name = input("输入姓名:")
     password = input("输入密码:")
 
@@ -41,14 +41,14 @@ for i in  range(1,4):
 练习打印99乘法表
 '''
 a = 1
-while a <= 9 :
+while a <= 9:
     # c = 9
     # while c > a:
     #
     #     print(end=' ')
     #     c -= 1
     b = 1
-    while b <= a :
+    while b <= a:
         print("%d*%d=%d" %(a,b,a*b) ,end=" ")
         b += 1
     print("")
@@ -119,7 +119,7 @@ for i in range(rows):  # 变量i控制行数
     # 菱形的下半部分
 for i in range(rows):
     for j in range(i):  # (1,rows-i)
-        print(" ",end="")
+        print(" ", end="")
         j += 1
     for k in range(2 * (rows - i) - 1):  # (1,2*i)
         if k == 0 or k == 2 * (rows - i) - 2:
