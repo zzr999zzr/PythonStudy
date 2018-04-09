@@ -122,8 +122,37 @@ while Q:
             print('请输入正确的商品编号')
     elif choice_goodsNo == 'exit':
         print('----您的购物车已购商品列表如下:----')
-        for x, y in enumerate(shopping_car, 1):
-            print(x, y[0], '￥%d 件数%d' % (y[1], y[2]))
+
+        #------查找shopping_car中重复数据，并显示重复次数
+        #------使用字典，后续还是无法正确打印，待解决
+        #Todo
+        # MyGoodsCar = {}
+        # for i2 in shopping_car:
+        #     i2 = str(i2)
+        #     if i2 not in MyGoodsCar:
+        #         MyGoodsCar[i2] = 1
+        #     else:
+        #         MyGoodsCar[i2] += 1
+        #
+        # print(MyGoodsCar)
+
+
+        #------去掉shopping_car中重复的数据
+        Mycar = []
+        temp_car = shopping_car
+        i1 = 0
+        print(temp_car)
+        while i1 < len(temp_car):
+            if not temp_car[i1] in Mycar:
+                Mycar.append(temp_car[i1])
+            else:
+                i1 += 1
+        print(Mycar)
+        '''---------------------------------'''
+        # for x, y in MyGoodsCar:
+        #     print(y[0], '￥%s 件数%s' %(y[1], MyGoodsCar[y]))
+        for x, y in enumerate(Mycar, 1):
+            print(x, y[0], '￥%d' % y[1])
         Q = False
     else:
         print('您输入的格式有误请重新输入。')
