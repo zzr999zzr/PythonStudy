@@ -45,12 +45,18 @@ print(f.format_map({'name': "Q", 'age': 88}))  # a is A b is Q c is 88
 
 
 
-
-
-
-
-
-
+# 重要的字符串方法
+print(d.count('a'))  # 返回相同的字符串的个数
+print(d.center(10, '#'))  # 居中显示字符串，其余用#号补足
+print(d.startswith('a'))  # 判断以某个内容开头
+print(d.find('a'))  # 查找到第一个指定字符，返回索引值
+print(f.format(name='Y', age=99))  # 格式化输出的另一种方法
+print(d.lower())  # 把字符串内容都变成小写
+print(d.upper())  # 把字符串内容都变成大写
+print(' tt,aa dd  '.strip())  # 去掉收尾的空格‘ ’，换行符\n，制表符\t
+print(' tt,a,a d,d  '.replace(',', 'T', 1))  # 按照‘,’ 去替换成T,并且只替换1次
+print(' tt,aba dad  '.split('a'))  # 按照a,分割字符串内容，有a就分割
+print(' tt,aba dad  '.split('a', 2))  # 按照a,分割字符串内容，分割按照后面的数字控制
 
 
 
