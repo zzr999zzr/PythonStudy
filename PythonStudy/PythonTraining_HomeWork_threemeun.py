@@ -18,30 +18,43 @@ Meun_dict = {
     '上海': {'D区': {'d镇': '小d街道'}, 'E区': {'e镇': '小e街道'}, 'F区': {'f镇': '小f街道'}},
     '广州': {'G区': {'g镇': '小g街道'}, 'H区': {'h镇': '小h街道'}, 'I区': {'i镇': '小i街道'}}
 }
-
+a = []
 startKey = True
 while startKey:
 # print(Meun_dict)
     print('主菜单'.center(16, ' '))
     for i in Meun_dict:
         print(i ,'>')
-
+        a.append(i)
     print()
     oneMeunNo = input('请输入您选择的主菜单名称:')
 # oneMeunNo = '北京'
+    if oneMeunNo == 'q':
+        startKey = False
+        break
+    elif oneMeunNo  in a:
+        for k in Meun_dict[oneMeunNo]:
+            print(k,'>')
+        twoMeunNo = input('请输入您选择的二级菜单名称:')
+        if twoMeunNo == 'b':
+            pass
+        elif twoMeunNo in k:
+            for y in Meun_dict[oneMeunNo][twoMeunNo]:
+                print(y, '>')
+            threeMeunNO = input('请输入您选择的三级菜单名称:')
+            if twoMeunNo in y:
+                print(Meun_dict[oneMeunNo][twoMeunNo][threeMeunNO])
 
-    for i in Meun_dict[oneMeunNo]:
-        print(i,'>')
+        else:
+            print('输入内容不存在')
 
-    twoMeunNo = input('请输入您选择的二级菜单名称:')
-# twoMeunNo = 'B区'
 
-    for i in Meun_dict[oneMeunNo][twoMeunNo]:
-        print(i,'>')
-    threeMeunNO = input('请输入您选择的三级菜单名称:')
-# threeMeunNO = 'b镇'
 
-    print(Meun_dict[oneMeunNo][twoMeunNo][threeMeunNO])
+    else:
+        print('输入的内容不存在！')
+
+
+
 
 
 
