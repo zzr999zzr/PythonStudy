@@ -214,8 +214,29 @@ print(ab_cd())  # 打印函数bar的内存地址 <function ab_cd.<locals>.bar at
 
 
 
+# 递归函数
+# 定义：在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，这个函数就是递归函数。
 
+# 普通阶乘函数实现
+def factorial(n):
+    a = n
+    for i in range(1, n):
+        print(i)
+        a *= i
+    return a
 
+print(factorial(4))
+
+# 递归函数阶乘实现
+
+def factorial_new(n):
+
+    if n == 1:
+        return 1
+    resl = n * factorial_new(n-1)
+    return resl
+
+print(factorial_new(4))
 
 
 
