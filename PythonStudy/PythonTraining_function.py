@@ -174,6 +174,50 @@ def print_info_three(**kwargs):
 print_info_three(**{'name':'alfa', 'age':'35', 'sex':'male'})
 
 
+# 高阶函数
+# 1.接受一个或者多个函数作为参数输入
+# 2.返回输入一个函数
+
+
+def abc(a, b, f1):
+    print(f1)  # 打印f1传入的是一个取绝对值的内置函数abs，<built-in function abs>
+    return f1(a) + f1(b)
+
+res1 = abc(10, -12 ,abs)
+print(res1)
+
+
+def ab_cd():
+    x = 3
+    def bar():
+        return x
+    return bar
+
+print(ab_cd())  # 打印函数bar的内存地址 <function ab_cd.<locals>.bar at 0x000002AADEF09510>
+
+
+
+# 函数的作用域
+# L：local，局部作用域，即函数中定义的变量；
+# E：enclosing，嵌套的父级函数的局部作用域，即包含此函数的上级函数的局部作用域，但不是全局的；
+# G：global，全局变量，就是模块级别定义的变量；
+# B：built-in，系统固定模块里面的变量，比如int, byte, array等。
+# 搜索变量的优先级顺序依次是：作用域局部>外层作用域>当前模块中的全局>python内置作用域，也就是LEGB。
+
+
+
+# （1）变量查找顺序：LEGB，作用域局部>外层作用域>当前模块中的全局>python内置作用域；
+# （2）只有模块、类、及函数才能引入新作用域；
+# （3）对于一个变量，内部作用域先声明就会覆盖外部变量，不声明直接使用，就会使用外部作用域的变量；
+# （4）内部作用域要修改外部作用域变量的值时，全局变量要使用global关键字，
+# 嵌套作用域变量要使用nonlocal关键字。nonlocal是python3新增的关键字，有了这个 关键字，就能完美的实现闭包了。
+
+
+
+
+
+
+
 
 
 
