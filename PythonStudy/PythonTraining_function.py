@@ -141,24 +141,37 @@ print(add_big(1,2,3,4,5,6))
 def print_info(**info):
     print(info)
     for i in info:
-        print(i+":"+info[i])
+        print('%s : %s' %(i, info[i]))
 
 
 print_info(name='alex',age=18,sex='female')
 
 
+# 函数参数的位置
+# 必须参数>默认参数>没有命名的不定长参数（*）>有命名的不定长参数（**）
+
+def print_info_one(name, *args, **kwargs):   #def print_info_one(name, **kwargs, *args) 报错
+    print("name : %s" %name)
+    print("args : %s" %args)
+    print("kwargs : %s" %kwargs)
+
+print_info_one('alex',18,hobby='girl',nationality='Chinese',ability='Python')
+# print_info_one(hobby='girl','alex',18,nationality='Chinese',ability='Python')   #报错
+# print_info_one('alex',hobby='girl',18,nationality='Chinese',ability='Python')   #报错
 
 
+# 函数不定长参数，传参另一种方式
+# 可以传一个整体，一个元祖，一个列表，一个字典，整体传参
 
+def print_info_two(*args):
+    print(args)
 
+print_info_two(*[1,2,'aa',3,'cc'])
 
+def print_info_three(**kwargs):
+    print(kwargs)
 
-
-
-
-
-
-
+print_info_three(**{'name':'alfa', 'age':'35', 'sex':'male'})
 
 
 
