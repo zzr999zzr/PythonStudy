@@ -1,7 +1,7 @@
-#!/usr/bin/python3
-#!-*- coding:utf-8 -*-
-#Author:Alfa
-#Time   : 2018/5/31 11:04
+# !/usr/bin/python3
+# !-*- coding:utf-8 -*-
+# Author:Alfa
+# Time   : 2018/5/31 11:04
 
 '''
 函数练习
@@ -9,7 +9,7 @@
 '''
 
 
-# 函数的特效
+# 函数的特性
 # 1.代码的重用
 # 2.可扩展性
 # 3.保持一致性
@@ -18,19 +18,19 @@ def fun1(n):
     print("this is function 1")
 
     with open("函数练习文件", "a", encoding='utf-8') as f:
-        f.write("这是方法%s\n" %n)
+        f.write("这是方法%s\n" % n)
 
 def fun2(n):
     print("this is function 2")
 
     with open("函数练习文件", "a", encoding='utf-8') as f:
-        f.write("这是方法%s\n" %n)
+        f.write("这是方法%s\n" % n)
 
 def fun3(n):
     print("this is function 3")
 
     with open("函数练习文件", "a", encoding='utf-8') as f:
-        f.write("这是方法%s\n" %n)
+        f.write("这是方法%s\n" % n)
 
 
 # fun1(1)
@@ -41,9 +41,9 @@ def fun3(n):
 # 代码重用
 
 def write_file(n):
-    print("this is function %s" %n)
+    print("this is function %s" % n)
     with open("函数练习文件", "a", encoding='utf-8') as f:
-        f.write("这是方法%s\n" %n)
+        f.write("这是方法%s\n" % n)
 
 
 
@@ -63,7 +63,7 @@ def logger(n):
     time_format = "%Y-%m-%d %X"
     current_time = time.strftime(time_format)
     with open("函数练习文件", "a", encoding='utf-8') as f:
-        f.write("end time is %s, function is %s" %(current_time, n))
+        f.write("end time is %s, function is %s" % (current_time, n))
 
 
 def func2(n):
@@ -82,11 +82,11 @@ def func2(n):
 # 必须参数
 # 必需参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。
 
-def a(name,age):
-    print("name:%s,age:%s" %(name, age))
+def a(name, age):
+    print("name:%s,age:%s" % (name, age))
 
-a("哈哈",23)
-a(23,"哈哈哈") #实参传入时，就按照形参的顺序位置赋值
+a("哈哈", 23)
+a(23, "哈哈哈")  #实参传入时，就按照形参的顺序位置赋值
 # a(23,"哈哈哈",11) # 报错，对应不上形参
 
 
@@ -105,10 +105,10 @@ b(name="PP", age=23)
 # 默认参数
 # 调用函数时，默认参数的值如果没有传入，则被认为是默认值
 
-def c(name, age, sex='male'):
-    print("name is %s" %name)
-    print("age is %s" %age)
-    print("sex is %s" %sex)
+def c(name, age, sex = 'male'):
+    print("name is %s" % name)
+    print("age is %s" % age)
+    print("sex is %s" % sex)
 
 c('hehe', 20, 'female')
 c('hehe', 20)
@@ -141,7 +141,7 @@ print(add_big(1,2,3,4,5,6))
 def print_info(**info):
     print(info)
     for i in info:
-        print('%s : %s' %(i, info[i]))
+        print('%s : %s' % (i, info[i]))
 
 
 print_info(name='alex',age=18,sex='female')
@@ -151,9 +151,9 @@ print_info(name='alex',age=18,sex='female')
 # 必须参数>默认参数>没有命名的不定长参数（*）>有命名的不定长参数（**）
 
 def print_info_one(name, *args, **kwargs):   #def print_info_one(name, **kwargs, *args) 报错
-    print("name : %s" %name)
-    print("args : %s" %args)
-    print("kwargs : %s" %kwargs)
+    print("name : %s" % name)
+    print("args : %s" % args)
+    print("kwargs : %s" % kwargs)
 
 print_info_one('alex',18,hobby='girl',nationality='Chinese',ability='Python')
 # print_info_one(hobby='girl','alex',18,nationality='Chinese',ability='Python')   #报错
@@ -166,12 +166,12 @@ print_info_one('alex',18,hobby='girl',nationality='Chinese',ability='Python')
 def print_info_two(*args):
     print(args)
 
-print_info_two(*[1,2,'aa',3,'cc'])
+print_info_two(*[1, 2, 'aa', 3, 'cc'])
 
 def print_info_three(**kwargs):
     print(kwargs)
 
-print_info_three(**{'name':'alfa', 'age':'35', 'sex':'male'})
+print_info_three(**{'name': 'alfa', 'age': '35', 'sex': 'male'})
 
 
 # 高阶函数
@@ -240,7 +240,30 @@ print(factorial_new(4))
 
 
 
+# 普通菲波那切数列
+def fibo(n):
+    one_num = 0
+    two_num = 1
+    three_num = 0
+    for i in range(n):
+        print(two_num, end=',')
+        three_num = one_num + two_num
+        one_num = two_num
+        two_num = three_num
+    return three_num
 
+print(fibo(6))
+
+
+# 递归斐波那契数列
+def fibo_new(n):
+
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return fibo_new(n-2) + fibo_new(n-1)
+
+print(fibo_new(2))
 
 
 
