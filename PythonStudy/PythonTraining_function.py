@@ -105,7 +105,7 @@ b(name="PP", age=23)
 # 默认参数
 # 调用函数时，默认参数的值如果没有传入，则被认为是默认值
 
-def c(name, age, sex = 'male'):
+def c(name, age, sex='male'):
     print("name is %s" % name)
     print("age is %s" % age)
     print("sex is %s" % sex)
@@ -120,21 +120,21 @@ c('hehe', 20)
 # （*）加了一个星号的，会把传入的参数都放在一个元组中（'bb',13,14,'aa',61,72）
 # (**)加了二个星号的，会把传入的参数都放在一个字典中
 
-def add(x,y):
-    print(x+y)
+def add(x, y):
+    print(x + y)
 
 add(5,11)
 
 
 def add_big(*num):
     print(num)
-    sum = 0
+    sums = 0
     for i in num:
-        sum += i
-    return sum
+        sums += i
+    return sums
 
 print(add_big(1,2,3))
-print(add_big(1,2,3,4,5,6))
+print(add_big(1, 2, 3, 4, 5, 6))
 
 
 
