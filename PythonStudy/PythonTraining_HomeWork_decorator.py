@@ -16,19 +16,54 @@
 
 
 
+isLogin = False
+def login_type(type='jd'):
+    def login_check(func):
+        def login():
+            global isLogin
+            if isLogin == False:
+
+                username = input("input username:")
+                password = input("input password:")
+                if type == 'wx':
+                    true_username = 'shine'
+                    true_password = '111111'
+                    while username != true_username and password != true_password:
+                        print("username or password input error")
+                        username = input("username input again:")
+                        password = input("password input again:")
+                    isLogin = True
+                else:
+                    true_username = 'alfa'
+                    true_password = '123456'
+                    while username != true_username and password != true_password:
+                        print("username or password input error")
+                        username = input("username input again:")
+                        password = input("password input again:")
+                    isLogin = True
+            else:
+                pass
+            func()
+        return login
+    return login_check
+
+@login_type('jd')
+def home_page():
+    print("welcome to HomePage!")
 
 
+@login_type('wx')
+def finance_page():
+    print("welcome to FinancePage!")
+
+@login_type('jd')
+def book_page():
+    print("welcome to BookPage!")
 
 
-
-
-
-
-
-
-
-
-
+finance_page()
+home_page()
+book_page()
 
 
 
