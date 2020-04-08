@@ -14,10 +14,8 @@
 
 """
 
-
-
 isLogin = False
-def login_type(type='jd'):
+def login_type(type):
     def login_check(func):
         def login():
             global isLogin
@@ -32,7 +30,8 @@ def login_type(type='jd'):
                         print("username or password input error")
                         username = input("username input again:")
                         password = input("password input again:")
-                    isLogin = True
+                    if username == true_username and password == true_password:
+                        isLogin = True
                 else:
                     true_username = 'alfa'
                     true_password = '123456'
@@ -40,7 +39,8 @@ def login_type(type='jd'):
                         print("username or password input error")
                         username = input("username input again:")
                         password = input("password input again:")
-                    isLogin = True
+                    if username == true_username and password == true_password:
+                        isLogin = True
             else:
                 pass
             func()
@@ -60,7 +60,7 @@ def finance_page():
 def book_page():
     print("welcome to BookPage!")
 
-
+home_page()
 finance_page()
 home_page()
 book_page()
